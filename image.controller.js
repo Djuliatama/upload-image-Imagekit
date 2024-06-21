@@ -1,4 +1,5 @@
-const imagekit = require('./imagekit.config')
+const { response } = require('express');
+const { imagekit } = require('./imagekit.config')
 const path = require('path');
 
 const uploadMedia = async (req,res) => {
@@ -10,6 +11,14 @@ if (req.file) {
             file: strFile,
             fileName: Date.now() + path.extname(req.file.originalname),
         });
+
+        res.status(200).json ({
+            status: true, 
+            message: 'Upload Success',
+            url: imageFile.url
+        })
+
+
     } catch (error) {
         console.error('Error uploading image:', error);
         return res.status(500).json({

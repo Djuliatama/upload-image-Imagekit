@@ -1,8 +1,8 @@
-const ImageKit = require("imagekit");
+const ImageKit = require('imagekit');
 
 const imagekit = new ImageKit({
-    publicKey : "insert public key",
-    privateKey : "insert private key",
+    publicKey : "insert your public key",
+    privateKey : "insert your private key",
     urlEndpoint : "insert your url endpoint"
 });
 
